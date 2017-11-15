@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="parrot.ico" />
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
@@ -21,7 +21,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -35,7 +35,10 @@
             <img width="250px" src="images/parrot-min.png" alt="What the Fark?!">
         </a>
     </div>
-    <div class="husky-image">
+    <div class="arrow bounce">
+        <a href="#husky" class="fa fa-arrow-down fa-1x"></a>
+    </div>
+    <div class="husky-image" id="husky">
             <a onclick="audioHusky.play();" data-toggle="popover" data-placement="top" data-content="Fuck!" data-trigger="hover">
                 <img width="250px" src="images/husky-min.png" alt="Fuck!">
             </a>
@@ -49,6 +52,24 @@
             $('[data-toggle="popover"]').popover()
         })
     </script>
+    <script>
+            $(document).ready(function(){
+              // Add smooth scrolling to all links
+              $("html, body").on('click', function(event) {
+            
+                if (this.hash !== "") {
+                  event.preventDefault();
+                  var hash = this.hash;
+            
+                  $('#husky').animate({
+                    scrollTop: $(hash).offset().top
+                  }, 800, function(){
+                    window.location.hash = hash;
+                  });
+                } // End if
+              });
+            });
+            </script>
 </body>
 
 </html>

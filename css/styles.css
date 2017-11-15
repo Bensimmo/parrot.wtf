@@ -79,3 +79,4 @@ body {
 .husky-image>a>img:hover {
     width: 270px;
 }
+    -webkit-animation: bounce 2s infinite;
