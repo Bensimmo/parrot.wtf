@@ -12,8 +12,16 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="parrot.ico" />
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -23,14 +31,23 @@
 
     <!-- Add your site or application content here -->
     <div class="parrot-image">
-        <a href="#" onclick="audio.play();">
-            <img width="250px" src="images/parrot-min.png" alt="What the Fark?!" >
+        <a onclick="audioParrot.play();" data-toggle="popover" data-placement="top" data-content="What the Fark!?" data-trigger="hover">
+            <img width="250px" src="images/parrot-min.png" alt="What the Fark?!">
         </a>
     </div>
-
+    <div class="husky-image">
+            <a onclick="audioHusky.play();" data-toggle="popover" data-placement="top" data-content="Fuck!" data-trigger="hover">
+                <img width="250px" src="images/husky-min.png" alt="Fuck!">
+            </a>
+        </div>
     <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
     <script>
-        var audio = new Audio('parrot_wtf.mp3');
+        var audioParrot = new Audio('parrot_wtf.mp3');
+        var audioHusky = new Audio('husky_fuck.mp3');
+
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
     </script>
 </body>
 
