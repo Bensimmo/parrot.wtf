@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body{
+    background-color: rgb(76, 76, 90);
+    color: white;
+    font-family: 'Indie Flower', cursive;
+}
+
+.parrot-image{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: all 1s;
+}
+
+.parrot-image > a > img{
+    -webkit-transition: width 0.3s; /* Safari */
+    transition: width 0.3s;
+}
+
+.parrot-image > a > img:hover{
+    width: 270px;
+}
