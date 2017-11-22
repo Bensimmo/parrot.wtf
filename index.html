@@ -31,19 +31,32 @@
 
     <!-- Add your site or application content here -->
     <div class="parrot-image">
-        <a onclick="audioParrot.play();" data-toggle="popover" data-placement="top" data-content="What the Fark!?" data-trigger="hover">
+        <a onclick="animalClicked('parrot');" data-toggle="popover" data-placement="top" data-content="What the Fark!?" data-trigger="hover">
             <img width="250px" src="images/parrot-min.png" alt="What the Fark?!">
         </a>
     </div>
     <div class="husky-image" id="husky">
-            <a onclick="audioHusky.play();" data-toggle="popover" data-placement="top" data-content="Fuck!" data-trigger="hover">
+            <a onclick="animalClicked('husky');" data-toggle="popover" data-placement="top" data-content="Fuck!" data-trigger="hover">
                 <img width="250px" src="images/husky-min.png" alt="Fuck!">
             </a>
         </div>
     <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
     <script>
-        var audioParrot = new Audio('parrot_wtf.mp3');
-        var audioHusky = new Audio('husky_fuck.mp3');
+        
+        function animalClicked(animal) {
+            switch (animal) {
+                case 'parrot': 
+                    playAudio('parrot_wtf.mp3');
+                    break;
+                case 'husky': 
+                    playAudio('husky_fuck.mp3');
+                    break;
+            }
+        }
+
+        function playAudio(audio) {
+            new Audio(audio).play();
+        }
 
         $(function () {
             $('[data-toggle="popover"]').popover()
